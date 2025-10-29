@@ -6,8 +6,8 @@ import 'package:hungry/shared/custom_text_field.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -23,31 +23,31 @@ class LoginView extends StatelessWidget {
                 key: formKey,
                 child: Column(
                   children: [
-                    Gap(100),
+                    const Gap(100),
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width * .7,
                       child: Image.asset('assets/logo/logo.png'),
                     ),
-                    Gap(10),
+                    const Gap(10),
                     CustomText(
                       text: 'Welcome Back, Discover the best fast food',
                       color: Colors.white,
                       size: 16,
                       fontWeight: FontWeight.w600,
                     ),
-                    Gap(70),
+                    const Gap(70),
                     CustomTextField(
                       controller: emailController,
                       hint: 'Email',
                       iSPassword: false,
                     ),
-                    Gap(20),
+                    const Gap(20),
                     CustomTextField(
                       controller: passwordController,
                       hint: 'Password',
                       iSPassword: true,
                     ),
-                    Gap(30),
+                    const Gap(30),
                     GestureDetector(
                       onTap: () {
                         if (formKey.currentState!.validate()) {
